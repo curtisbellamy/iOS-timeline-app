@@ -10,8 +10,8 @@ import Foundation
 
 class HistoricData {
     
-    let dictionary : [ String : String ] = {
-        
-    }
+//    let dictionary : [ String : String ] = {
+//        
+//    }
     
 }

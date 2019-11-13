@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5856B7FD309688354D8059D6 /* Pods_HistoricTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4EA76AC359C2793175C3F7 /* Pods_HistoricTimeline.framework */; };
+		64CF1152237BE60A00487BE2 /* InfoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CF1151237BE60A00487BE2 /* InfoModalViewController.swift */; };
 		A20F3AD823763369009AE74A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F3AD723763369009AE74A /* AppDelegate.swift */; };
 		A20F3ADA23763369009AE74A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F3AD923763369009AE74A /* SceneDelegate.swift */; };
 		A20F3ADC23763369009AE74A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F3ADB23763369009AE74A /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64CF1151237BE60A00487BE2 /* InfoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModalViewController.swift; sourceTree = "<group>"; };
+		74F185B3CEBB696AA5E8B462 /* Pods-HistoricTimeline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HistoricTimeline.release.xcconfig"; path = "Target Support Files/Pods-HistoricTimeline/Pods-HistoricTimeline.release.xcconfig"; sourceTree = "<group>"; };
 		A20F3AD423763369009AE74A /* HistoricTimeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoricTimeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20F3AD723763369009AE74A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A20F3AD923763369009AE74A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		A20F3AE323763369009AE74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A20F3AE523763369009AE74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20F3AEB237641E3009AE74A /* HistoricData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricData.swift; sourceTree = "<group>"; };
+		BA4EA76AC359C2793175C3F7 /* Pods_HistoricTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HistoricTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD21BFDCC3B7D14A851C3E01 /* Pods-HistoricTimeline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HistoricTimeline.debug.xcconfig"; path = "Target Support Files/Pods-HistoricTimeline/Pods-HistoricTimeline.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5856B7FD309688354D8059D6 /* Pods_HistoricTimeline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6953BC863DE3036CE954E788 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA4EA76AC359C2793175C3F7 /* Pods_HistoricTimeline.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A20F3ACB23763369009AE74A = {
 			isa = PBXGroup;
 			children = (
 				A20F3AD623763369009AE74A /* HistoricTimeline */,
 				A20F3AD523763369009AE74A /* Products */,
+				AEEE8CF3ADCDB81E9204386A /* Pods */,
+				6953BC863DE3036CE954E788 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +83,18 @@
 				A20F3AE223763369009AE74A /* LaunchScreen.storyboard */,
 				A20F3AE523763369009AE74A /* Info.plist */,
 				A20F3AEB237641E3009AE74A /* HistoricData.swift */,
+				64CF1151237BE60A00487BE2 /* InfoModalViewController.swift */,
 			);
 			path = HistoricTimeline;
+			sourceTree = "<group>";
+		};
+		AEEE8CF3ADCDB81E9204386A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD21BFDCC3B7D14A851C3E01 /* Pods-HistoricTimeline.debug.xcconfig */,
+				74F185B3CEBB696AA5E8B462 /* Pods-HistoricTimeline.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A20F3AE823763369009AE74A /* Build configuration list for PBXNativeTarget "HistoricTimeline" */;
 			buildPhases = (
+				2587E8EC243696BD8AB51A43 /* [CP] Check Pods Manifest.lock */,
 				A20F3AD023763369009AE74A /* Sources */,
 				A20F3AD123763369009AE74A /* Frameworks */,
 				A20F3AD223763369009AE74A /* Resources */,
+				08E711305F0995C36254193C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +165,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08E711305F0995C36254193C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HistoricTimeline/Pods-HistoricTimeline-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HistoricTimeline/Pods-HistoricTimeline-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HistoricTimeline/Pods-HistoricTimeline-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2587E8EC243696BD8AB51A43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HistoricTimeline-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A20F3AD023763369009AE74A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +215,7 @@
 				A20F3ADC23763369009AE74A /* ViewController.swift in Sources */,
 				A20F3AEC237641E3009AE74A /* HistoricData.swift in Sources */,
 				A20F3AD823763369009AE74A /* AppDelegate.swift in Sources */,
+				64CF1152237BE60A00487BE2 /* InfoModalViewController.swift in Sources */,
 				A20F3ADA23763369009AE74A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +358,7 @@
 		};
 		A20F3AE923763369009AE74A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD21BFDCC3B7D14A851C3E01 /* Pods-HistoricTimeline.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +377,7 @@
 		};
 		A20F3AEA23763369009AE74A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74F185B3CEBB696AA5E8B462 /* Pods-HistoricTimeline.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

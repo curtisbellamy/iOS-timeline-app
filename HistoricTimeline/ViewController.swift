@@ -8,12 +8,27 @@
 
 import UIKit
 import Darwin
+import MBCircularProgressBar
 
 class ViewController: UIViewController {
+    
+    
 
+    @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var picker: UIDatePicker!
+    @IBOutlet weak var progressView: MBCircularProgressBarView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.progressView.value = 0
+        
+        
+        let color1 = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0) /* #ffffff */
+    
+        self.picker.setValue(color1, forKey: "textColor")
         
         
         
@@ -39,6 +54,29 @@ class ViewController: UIViewController {
 //        print(hoursPassed)
 //        print(daysPassed)
         
+    }
+    
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 2
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        <#code#>
+//    }
+    
+    
+    @IBAction func startClicked(_ sender: Any) {
+            self.progressView.value = 0
+            
+            UIView.animate(withDuration: picker.countDownDuration) {
+                       self.progressView.value = 100
+            }
+
+    }
+    
+    @IBAction func stopClicked(_ sender: Any) {
+        self.progressView.value = 0
+
     }
 
 
