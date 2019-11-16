@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HistoricTimeline.xcodeproj">
+      location = "self:/Users/curtisbellamy/Desktop/CircularLoaderLBTA/HistoricTimeline.xcodeproj">
    </FileRef>
 </Workspace>
