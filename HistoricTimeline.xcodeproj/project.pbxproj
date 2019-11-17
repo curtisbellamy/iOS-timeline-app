@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64C6A2BC2380AF6B00C1D53A /* HistoricData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6A2BB2380AF6B00C1D53A /* HistoricData.swift */; };
+		64C6A2BE2381D70D00C1D53A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6A2BD2381D70D00C1D53A /* EventViewController.swift */; };
 		C71C9A691FDB2933004A20EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C9A681FDB2933004A20EB /* AppDelegate.swift */; };
 		C71C9A6B1FDB2933004A20EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71C9A6A1FDB2933004A20EB /* ViewController.swift */; };
 		C71C9A6E1FDB2933004A20EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71C9A6C1FDB2933004A20EB /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64C6A2BB2380AF6B00C1D53A /* HistoricData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricData.swift; sourceTree = "<group>"; };
+		64C6A2BD2381D70D00C1D53A /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		C71C9A651FDB2933004A20EB /* HistoricTimeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoricTimeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71C9A681FDB2933004A20EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C71C9A6A1FDB2933004A20EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				C71C9A711FDB2933004A20EB /* LaunchScreen.storyboard */,
 				C71C9A741FDB2933004A20EB /* Info.plist */,
 				C79EA3C11FDF40B2009414C1 /* Extensions.swift */,
+				64C6A2BB2380AF6B00C1D53A /* HistoricData.swift */,
+				64C6A2BD2381D70D00C1D53A /* EventViewController.swift */,
 			);
 			path = HistoricTimeline;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C6A2BE2381D70D00C1D53A /* EventViewController.swift in Sources */,
+				64C6A2BC2380AF6B00C1D53A /* HistoricData.swift in Sources */,
 				C71C9A6B1FDB2933004A20EB /* ViewController.swift in Sources */,
 				C79EA3C21FDF40B2009414C1 /* Extensions.swift in Sources */,
 				C71C9A691FDB2933004A20EB /* AppDelegate.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController, UIPickerViewDelegate {
     
@@ -14,10 +15,12 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     var shapeLayer: CAShapeLayer!
     var pulsatingLayer: CAShapeLayer!
     var timer = Timer()
-    
     var inProgress: Bool = false;
+    var obj = HistoricData()
+    var data = [ Double : [String] ]()
+    var keys = [Double]()
+    var arr = [Double]()
 
-    
     var seconds = 0
     
     let percentageLabel: UILabel = {
@@ -79,12 +82,79 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         let calendar = Calendar(identifier: .gregorian)
         let date = DateComponents(calendar: calendar, hour: 0, minute: 1).date!
         picker.setDate(date, animated: true)
+        
+        data = obj.dictionary
+                    
 
-
-
+//        for (kind, numbers) in data {
+//            print(kind)
+//            for number in numbers {
+//                print(number)
+//            }
+//        }
+        for kind in data {
+            keys.append(kind.key)
+        }
+        keys.sort()
+        
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .sound]) {
+            (granted, error) in
+            
+        }
+        
+        
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Title"
+        content.body = "Body"
+        
+        
+        let dateTrigger = Date().addingTimeInterval(10)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateTrigger)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let uuidString = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            //check and handle errors
+        }
+        
     }
     
+    func calcIntervals() -> [Double] {
+        let duration = Double(picker.countDownDuration)
+        
+        var arr = [Double]()
+        arr.append(0.073 * duration)
+        arr.append(0.311 * duration)
+        arr.append(0.4791 * duration)
+        arr.append(0.7033 * duration)
+        arr.append(0.9042 * duration)
+        arr.append(1.0 * duration)
+        
+        for item in arr {
+            print(item)
+        }
+        
+//        let interval1 = 0.073 * duration
+//        let interval2 = 0.311 * duration
+//        let interval3 = 0.4791 * duration
+//        let interval4 = 0.7033 * duration
+//        let interval5 = 0.9042 * duration
+//        let interval6 = 1.0 * duration
+        
+        return arr
+    }
+    
+    
     @objc func datePickerChanged(picker: UIDatePicker) {
+        calcIntervals()
         print(picker.countDownDuration)
         self.seconds = Int(picker.countDownDuration)
     }
@@ -95,6 +165,8 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         timer.invalidate()
         setupPercentageLabel()
         percentageLabel.text = "Start"
+        inProgress = false
+        seconds = Int(picker.countDownDuration)
     }
     
     private func setupPercentageLabel() {
@@ -133,10 +205,53 @@ class ViewController: UIViewController, UIPickerViewDelegate {
 
     
     @objc func counter() {
+        
         seconds -= 1
+
+        
         if seconds == 0 {
+            print(data[keys[5]]!)
+            setupCircleLayers()
+            timer.invalidate()
+            seconds = Int(picker.countDownDuration)
             inProgress = false;
+            setupPercentageLabel()
+            percentageLabel.text = "Start"
+            return
+
         }
+        
+        let duration = Int(picker.countDownDuration)
+        
+        if seconds == duration - Int(arr[0]) {
+            print(data[keys[0]]!)
+        }
+        
+        if seconds == duration - Int(arr[1]) {
+            print(data[keys[1]]!)
+        }
+        
+        if seconds == duration - Int(arr[2]) {
+            print(data[keys[2]]!)
+        }
+        
+        if seconds == duration - Int(arr[3]) {
+            print(data[keys[3]]!)
+        }
+        
+        if seconds == duration - Int(arr[4]) {
+            print(data[keys[4]]!)
+        }
+        
+        if seconds == duration - Int(arr[5]) {
+            print(data[keys[5]]!)
+        }
+            
+//        if seconds == 55 || seconds == 50 {
+//            performSegue(withIdentifier: "showModal", sender: nil)
+//        }
+        
+    
         
         self.percentageLabel.text = String(seconds)
         
@@ -145,7 +260,10 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     fileprivate func animateCircle() {
         inProgress = true
         
+        arr = calcIntervals()
+        
         self.percentageLabel.text = ""
+        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -169,10 +287,6 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.seconds = Int(picker.countDownDuration)
-        print(seconds)
-    }
 
 }
 
