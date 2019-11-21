@@ -1,0 +1,16 @@
+PODS:
+  - NotificationView (0.2.1)
+
+DEPENDENCIES:
+  - NotificationView
+
+SPEC REPOS:
+  trunk:
+    - NotificationView
+
+SPEC CHECKSUMS:
+  NotificationView: 7d60fdb59ad3cfde08c637c0df2aa3925e364625
+
+PODFILE CHECKSUM: 32bf0ed8a792a5ecb3c0507420671fdc9e4aa6ba
+
+COCOAPODS: 1.8.3
