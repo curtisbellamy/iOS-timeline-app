@@ -89,7 +89,9 @@ class ViewController: UIViewController {
             keys.append(item.date)
         }
                     
-    
+        for item in percentages {
+            print(item)
+        }
         
         
         
@@ -111,9 +113,9 @@ class ViewController: UIViewController {
 //            print(item)
 //        }
 //
-        for item in intervals {
-            print(item)
-        }
+//        for item in intervals {
+//            print(item)
+//        }
 //
 //        for item in percentages {
 //            print(item)
