@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,15 +32,15 @@
 /* Begin PBXFileReference section */
 		081E91137542BCE4B554999469F84062 /* Pods-BackwardInTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BackwardInTime.debug.xcconfig"; sourceTree = "<group>"; };
 		1177F2915B5ECAD5EE604CB181AEF1EE /* Extensions+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Extensions+.swift"; path = "NotificationView/Classes/Extensions+.swift"; sourceTree = "<group>"; };
-		2BD319551B575173A3F04E040B29A663 /* NotificationView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NotificationView.framework; path = NotificationView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD319551B575173A3F04E040B29A663 /* NotificationView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		38AD4EB3566E1753CD144F6B8BAEBEBB /* Pods-BackwardInTime-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BackwardInTime-Info.plist"; sourceTree = "<group>"; };
 		3DAA50ED4BC7A65DB1A9223FE8AAC081 /* NotificationView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NotificationView-umbrella.h"; sourceTree = "<group>"; };
 		437A7861AC192855BC7C83139FD284EF /* Pods-BackwardInTime-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BackwardInTime-acknowledgements.plist"; sourceTree = "<group>"; };
 		58A4632206E76DD1EC24923327FF63DC /* Pods-BackwardInTime-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BackwardInTime-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5E6D070F3A814E5C616A6A6E387B4DAC /* Pods_BackwardInTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BackwardInTime.framework; path = "Pods-BackwardInTime.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E6D070F3A814E5C616A6A6E387B4DAC /* Pods_BackwardInTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackwardInTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D530C4332DCC91A2D8450C8664CD7A /* Pods-BackwardInTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BackwardInTime-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B15C58572E29F19A9BEC48CC81AEA346 /* NotificationView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NotificationView-prefix.pch"; sourceTree = "<group>"; };
 		B5638035B97DF36EA491CBA5857C34C0 /* Pods-BackwardInTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BackwardInTime.release.xcconfig"; sourceTree = "<group>"; };
 		B5EC995904DC89EE9B6AF838CA5FD603 /* NotificationBannerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationBannerView.swift; path = NotificationView/Classes/NotificationBannerView.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 				D9B5C77A7F00A151EDED9691FFB4670E /* NotificationView.swift */,
 				384910BDE0048A5F0681FF5913A2BB3B /* Support Files */,
 			);
-			name = NotificationView;
 			path = NotificationView;
 			sourceTree = "<group>";
 		};
@@ -240,11 +239,12 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 98AD5D3333ADE41B1E098C4027D6C563 /* Products */;
@@ -423,7 +423,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-BackwardInTime/Pods-BackwardInTime-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,7 +558,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-BackwardInTime/Pods-BackwardInTime-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
