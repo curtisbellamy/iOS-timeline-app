@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var stopBtn: UIButton!
+    
     var timer = Timer()
     var currentDate = Date()
         
@@ -37,26 +39,31 @@ class ViewController: UIViewController {
     
     var keys = [String]()
     
-    
     var data = [Event]()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // increases height of progress bar
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 20)
         
-
+        // copies over all HistoricData into data variable
         data = obj.events
 
         
         timePicker.addTarget(self, action: #selector(timePickerChanged(picker:)), for: .valueChanged)
         
+        
         let calendar = Calendar(identifier: .gregorian)
         let date = DateComponents(calendar: calendar, hour: 0, minute: 1).date!
         timePicker.setDate(date, animated: true)
         
+        
         timeReadout.text = "00:00:00"
         progressBar.progress = 0.0
+        
         calcIncrement()
         
         
@@ -152,7 +159,7 @@ class ViewController: UIViewController {
     
     
     private func resetTimer() {
-        timer.invalidate()
+        self.timer.invalidate()
         hours = 0
         minutes = 0
         seconds = 0
@@ -172,6 +179,12 @@ class ViewController: UIViewController {
     
     @IBAction func stopClicked(_ sender: Any) {
         resetTimer()
+        timePicker.isEnabled = true
+        
+        if stopBtn.currentTitle == "Reset" {
+            stopBtn.setTitle("Stop", for: .normal)
+
+        }
      
     }
     
@@ -184,12 +197,23 @@ class ViewController: UIViewController {
         
     }
     
+    private func timerStopped() {
+        timePicker.isEnabled = true
+        stopBtn.setTitle("Reset", for: .normal)
+    }
+    
     
     @objc func counter() {
         var count : Int = 0;
         
-        let state = UIApplication.shared.applicationState
-
+        if duration != 0 {
+            timePicker.isEnabled = false
+        }
+        
+        if duration == 0 {
+            timerStopped()
+        }
+        
         
         if duration >= 0 {
             
