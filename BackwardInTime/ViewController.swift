@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var stopBtn: UIButton!
     @IBOutlet weak var percentageLabel: UILabel!
-    @IBOutlet weak var currentTimePeriod: UILabel!
     
     var timer = Timer()
     var currentDate = Date()
@@ -50,8 +49,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // increases height of progress bar
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 20)
+        timePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
         // copies over all HistoricData into data variable
         data = obj.events
@@ -190,6 +191,7 @@ class ViewController: UIViewController {
     @IBAction func stopClicked(_ sender: Any) {
         resetTimer()
         timePicker.isEnabled = true
+        percentageLabel.text = "0.0%"
         
         if stopBtn.currentTitle == "Reset" {
             stopBtn.setTitle("Stop", for: .normal)
@@ -237,7 +239,6 @@ class ViewController: UIViewController {
                         
                     performSegue(withIdentifier: "showModal", sender: nil)
 
-                    currentTimePeriod.text = data[count].info
                                     
                     
             
