@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var currentTimePeriod: UILabel!
     
     var timer = Timer()
     var currentDate = Date()
@@ -40,6 +42,8 @@ class ViewController: UIViewController {
     var keys = [String]()
     
     var data = [Event]()
+    
+    var formatter = NumberFormatter()
     
     
 
@@ -74,6 +78,12 @@ class ViewController: UIViewController {
     
         calcPercentages()
         calcIntervals()
+        
+        
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        formatter.numberStyle = .percent
+
         
         for item in data {
             keys.append(item.date)
@@ -227,6 +237,8 @@ class ViewController: UIViewController {
                         
                     performSegue(withIdentifier: "showModal", sender: nil)
 
+                    currentTimePeriod.text = data[count].info
+                                    
                     
             
                 }
@@ -243,7 +255,7 @@ class ViewController: UIViewController {
             duration -= 1
             
             progressBar.progress += progressIncrement
-
+            percentageLabel.text = formatter.string(for: progressBar.progress)
         }
         
         count = 0
